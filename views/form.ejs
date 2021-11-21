@@ -16,6 +16,8 @@
 
   <div class="form-data">
     <form action="my-form" method="Post" onsubmit="return formSubmit();" action="">
+      <!--Customer info-->
+
       <label for="name">Name</label>
       <input name="name" type="text" id="name" placeholder="First Last" ><br/>
 
@@ -25,15 +27,28 @@
       <label for="city">City</label>
       <input name="city" type="text" id="city" placeholder="city"><br/>
 
-      <label for="province">Province</label>
-      <input name="province" type="text" id="province" placeholder="province"><br/>
+      <label>Province</label>
+      <select name="province" id="province">
+          <option value="">----- Select -----</option>
+          <option value="bc">British Columbia</option>
+          <option value="ab">Alberta</option>
+          <option value="sk">Saskatchewan</option>
+          <option value="mb">Manitoba</option>
+          <option value="on">Ontario</option>
+          <option value="qb">Quebec</option>
+          <option value="ns">Nova Scotia</option>
+          <option value="pe">Prince Edward Island</option>
+          <option value="nb">New Brunswick</option>
+          <option value="nf">Newfoundland</option>
+      </select><br/>
 
-      <label for="phone-number">Phone Number</label>
+       <label for="phone-number">Phone Number</label>
       <input name="phone-number" type="number" id="phone-number" placeholder="xxxxxxxxxx"><br/>
 
       <label for="email">Email</label>
       <input name="email" type="email" id="email" placeholder="email@domain.com"><br/>
 
+  <!-- Products for sale-->
 
       <label for="medical-tape">Medical Tape</label>
       <input name="medical-tape" type="number" id="medical-tape" placeholder="Enter quantity number"><br/>
@@ -57,12 +72,12 @@
           <option value="large">Large</option>
       </select><br/>
 
-      
+
       <input type="submit" value="Submit">
 
-      <p id="errors"></p>
+      <!--where the error data will show up-->
 
-        
+      <p id="errors"></p>      
     
     </form>
   </div>
@@ -70,6 +85,8 @@
   <div class="form-data-results">
       <p id="form-results">This is where the form data will show up.</p>
     </div>
+
+    <div class="clear"></div>
 
 
 
