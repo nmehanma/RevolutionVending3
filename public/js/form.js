@@ -66,15 +66,43 @@ const formSubmit = () => {
     }
   }
 
+  // address validation
+
+  const addressRegex = /^\d+\s[a-z]+\s[a-z]+$/
+
+  if(addressRegex.test(address)){
+    errors += '';    
+  }
+  else {
+    errors += 'Address is not in correct format, example "123 Main Street" <br/>';
+  }
+
+  // city validation
+
+  const cityRegex = /^[A-Z][a-z]+?(\s[A-Z][a-z]+|)$/
+
+  if(cityRegex.test(city)) {
+    errors += '';
+  }
+  else {
+    errors += 'City is not in correct format, example "Toronto" or "New Dundee" <br/>' 
+  }
+
+
+  
+
+
+  
+
  
 
 
   
   //validation checks for accurate input
-  const address = 
 
 
-  const
+
+
 
 
   
