@@ -177,34 +177,34 @@ const formSubmit = () => {
 
     switch (province) {
       case "bc":
-      taxRate = 0.12;
-      break;
+        taxRate = 0.12;
+        break;
       case "ab":
-      taxRate = 0.05;
-      break;
+        taxRate = 0.05;
+        break;
       case "sk":
-      taxRate = 0.11;
-      break;
-      case 'mb':
-      taxRate = 0.12;
-      break;
-      case 'on':
-      taxRate = 0.13;
-      break;
-      case 'qb':
-      taxRate = 0.14975
-      break;
-      case 'ns':
-      taxRate = 0.15;
-      break;      
-      case 'nb':
-      taxRate = 0.15;
-      break;
-      case 'pe':
-      taxRate = 0.15;
-      break
-      case 'nf':
-      taxRate = 0.15;
+        taxRate = 0.11;
+        break;
+      case "mb":
+        taxRate = 0.12;
+        break;
+      case "on":
+        taxRate = 0.13;
+        break;
+      case "qb":
+        taxRate = 0.14975;
+        break;
+      case "ns":
+        taxRate = 0.15;
+        break;
+      case "nb":
+        taxRate = 0.15;
+        break;
+      case "pe":
+        taxRate = 0.15;
+        break;
+      case "nf":
+        taxRate = 0.15;
     }
 
     let totalTax = subTotalCost * taxRate;
@@ -227,5 +227,16 @@ const formSubmit = () => {
                 Tax: $${totalTax}
                 totalCost: $${totalCost}
                 `;
+
+    // remove errors present
+
+    document.getElementById("errors").innerHTML = "";
+    document.getElementById("errors").style.border = "0px";
+
+    // show the values put in by the user and the total cost
+    document.getElementById("form-results").innerHTML = myOutput;
   }
-};
+   // Return false will stop the form from submitting and keep it on the current page.
+   return false;
+
+}
