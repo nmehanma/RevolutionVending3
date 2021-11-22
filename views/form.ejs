@@ -46,7 +46,7 @@
       <input name="phoneNumber" type="text" id="phone-number" placeholder="xxxxxxxxxx"><br/>
 
       <label for="email">Email</label>
-      <input name="email" type="email" id="email" placeholder="email@domain.com"><br/>
+      <input name="email" type="text" id="email" placeholder="email@domain.com"><br/>
 
   <!-- Products for sale-->
 
@@ -83,6 +83,17 @@
   </div>
   <div class="formData">
     <% 
+       if (typeof(errors) != 'undefined')
+       {
+         for(let error of errors)
+         {
+           %>
+           <p class='errors'><%= error.msg %></p>
+           <%
+         }
+       }      
+    %> 
+    <% 
       if(typeof(name) != 'undefined')
       {
         %>
@@ -114,7 +125,7 @@
           </tr>    
           <tr>
             <th> City: </th>
-            <td><%= cityy %></td>
+            <td><%= city %></td>
           </tr>
           <tr>
             <th> Province: </th>
@@ -148,18 +159,7 @@
             <th> Sub Total: </th>
             <td>$<%= email %></td>
           </tr>
-          <tr>
-            <th> Subtotal: </th>
-            <td><%= subTotal.toFixed(2) %></td>
-          </tr>  
-          <tr>
-            <th> Tax: </th>
-            <td>$<%= totalTax.toFixed(2) %></td>
-          </tr>
-          <tr>
-            <th> Total Cost: </th>
-            <td>$<%= totalCost.toFixed(2) %></td>
-          </tr>                                     
+                                 
         </table>
     <%
       }
