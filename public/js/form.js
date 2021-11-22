@@ -1,6 +1,8 @@
 //logic for submitting form from form.ejs file
 
 const formSubmit = () => {
+
+  return true; // uncomment this line to bypass the valdations 
   let myOutput = ""; // this will be used to store output of the form
 
   let errors = ""; // will be used to store error messages from the form

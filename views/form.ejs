@@ -1,21 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!-- <!DOCTYPE html> -->
+<!-- <html> -->
+<!-- <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Forms and Validations</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="js/form.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="css/form.css">
-</head>
+</head> -->
 <body>
 
   <h1>Revolution Vending</h1>
 
   <div class="form-data">
-    <form action="my-form" method="Post" onsubmit="return formSubmit();" action="">
+    <form name="my-form" method="post" onsubmit="return formSubmit();" action="">
       <!--Customer info-->
 
       <label for="name">Name</label>
@@ -43,7 +43,7 @@
       </select><br/>
 
        <label for="phone-number">Phone Number</label>
-      <input name="phone-number" type="text" id="phone-number" placeholder="xxxxxxxxxx"><br/>
+      <input name="phoneNumber" type="text" id="phone-number" placeholder="xxxxxxxxxx"><br/>
 
       <label for="email">Email</label>
       <input name="email" type="email" id="email" placeholder="email@domain.com"><br/>
@@ -51,13 +51,13 @@
   <!-- Products for sale-->
 
       <label for="medical-tape">Medical Tape</label>
-      <input name="medical-tape" type="text" id="medical-tape" placeholder="Enter quantity number"><br/>
+      <input name="medicalTape" type="text" id="medical-tape" placeholder="Enter quantity number"><br/>
 
       <label for="chalk">Chalk</label>
       <input name="chalk" type="text" id="chalk" placeholder="Enter quantity number"><br/>
 
       <label>Gymnastic suit</label>
-      <select name="gymnastic-suit" id="gymnastic-suit">
+      <select name="gymnasticSuit" id="gymnastic-suit">
           <option value="">----- Select -----</option>
           <option value="s">Small $2</option>
           <option value="m">Medium $3</option>
@@ -65,7 +65,7 @@
       </select><br/>
 
       <label>Grips</label>
-      <select name="gymnastic-grip" id="gymnastic-grip">
+      <select name="gymnasticGrip" id="gymnastic-grip">
           <option value="">----- Select -----</option>
           <option value="s">Small $2</option>
           <option value="m">Medium $3</option>
@@ -81,34 +81,100 @@
     
     </form>
   </div>
+  <div class="formData">
+    <% 
+      if(typeof(name) != 'undefined')
+      {
+        %>
+        <p id="form-results"><%= `${name}'s Receipt` %></p>
+        <table>
+          <tr>
+            <th> Name: </th>
+            <td><%= name %></td>
+          </tr>
+          <tr>
+            <th> Address: </th>
+            <td><%= address %></td>
+          </tr>
+          <tr>
+            <th> City: </th>
+            <td><%= city %></td>
+          </tr>
+          <tr>
+            <th> Province: </th>
+            <td><%= province %></td>
+          </tr>
+          <tr>
+            <th> Phone Number: </th>
+            <td><%= phoneNumber %></td>
+          </tr>
+          <tr>
+            <th> Email: </th>
+            <td><%= email %></td>
+          </tr>    
+          <tr>
+            <th> City: </th>
+            <td><%= cityy %></td>
+          </tr>
+          <tr>
+            <th> Province: </th>
+            <td><%= province %></td>
+          </tr>
+          <tr>
+            <th> Phone Number: </th>
+            <td><%= phoneNumber %></td>
+          </tr>
+          <tr>
+            <th> Email: </th>
+            <td><%= email %></td>
+          </tr>
+          <tr>
+            <th> Medical Tape: </th>
+            <td><%= medicalTape %></td>
+          </tr>
+          <tr>
+            <th> Chalk: </th>
+            <td><%= chalk %></td>
+          </tr>
+          <tr>
+            <th> Gymnastic Suit: </th>
+            <td><%= gymnasticSuit %></td>
+          </tr>
+          <tr>
+            <th> Grips: </th>
+            <td><%= gymnasticGrip %></td>
+          </tr>
+          <tr>
+            <th> Sub Total: </th>
+            <td>$<%= email %></td>
+          </tr>
+          <tr>
+            <th> Subtotal: </th>
+            <td><%= subTotal.toFixed(2) %></td>
+          </tr>  
+          <tr>
+            <th> Tax: </th>
+            <td>$<%= totalTax.toFixed(2) %></td>
+          </tr>
+          <tr>
+            <th> Total Cost: </th>
+            <td>$<%= totalCost.toFixed(2) %></td>
+          </tr>                                     
+        </table>
+    <%
+      }
+    %>  
+  </div>
 
-  <div class="form-data-results">
-      <p id="form-results">This is where the form data will show up.</p>
+
+    
+  
+
+
+
     </div>
 
     <div class="clear"></div>
-
-
-
-    <!-- <section class="w50">
-        <form name="myform" method="Post" onsubmit="return formSubmit();"  action="" >
-          <label>Name</label>
-          <input id="name" placeholder="First Last" type="text" name="name"><br/>
-    
-          <label>Email</label>
-          <input id="email" placeholder="email@domain.com" type="email" name="email"><br/>
-    
-          <label>Phone</label>
-          <input id="phone" placeholder="123-123-1234" type="phone" name="phone"><br/>
-    
-          <label>Post Code</label>
-          <input id="postcode" placeholder="X9X 9X9" type="postcode" name="postcode"><br/>
-          
-          <label>Will you have lunch?</label>
-          <input type="radio" value="yes" id="radio1" name="lunch">Yes
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" value="no" id="radio2" name="lunch">No -->
-          <br/>
 
 
 
