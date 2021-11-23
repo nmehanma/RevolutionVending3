@@ -43,6 +43,9 @@ h1 {
   text-align: left;
 }
 
-input {
-  align-items: right;
+label {
+  text-align: left;
+  display: inline-block;
+  margin: 4px;
+  
 }

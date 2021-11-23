@@ -157,22 +157,31 @@
           <th>City:</th>
           <td><%= city %></td>
         </tr>
-        <tr>
-          <th>Medical Tape:</th>
-          <td>$<%= medicalTapeCost %></td>
-        </tr>
-        <tr>
-          <th>Chalk:</th>
-          <td>$<%= chalkCost %></td>
-        </tr>
-        <tr>
-          <th>Gymnastic Suit:</th>
-          <td>$<%= gymnasticSuitCost %></td>
-        </tr>
-        <tr>
-          <th>Grips:</th>
-          <td>$<%= gymnasticGripCost %></td>
-        </tr>
+        
+          <% if(medicalTapeCost !== 0) { %>
+            <tr>
+            <th>Medical Tape:</th>
+            <td><%= medicalTapeCost %></td>
+            </tr>
+          <% } %>
+          <% if(chalkCost !== 0) { %>
+            <tr>
+              <th>Chalk:</th>
+              <td><%= chalkCost %></td>
+            </tr>
+          <% } %>
+          <% if(gymnasticSuitCost !== 0) { %>
+            <tr>
+              <th>Gymnastic Suit:</th>
+              <td><%= gymnasticSuitCost %></td>
+            </tr>
+          <% } %>
+          <% if( gymnasticGripCost !== 0) { %>
+            <tr>
+              <th>Gymnastic Grip:</th>
+              <td><%= gymnasticGripCost %></td>
+            </tr>
+          <% } %>          
         <tr>
           <th>Sub Total:</th>
           <td>$<%= subTotal %></td>

@@ -91,20 +91,26 @@ const customCityValidation = value => {
 
 // medicalTape validation
 const customMedicalTapeValidation = value => {
-  if (!checkRegex(value, medicalTapeRegex)) {
+  if(value === "") {
+    return true;
+  } else if (!checkRegex(value, medicalTapeRegex)) {
     throw new Error(
-      "Please enter a whole number for medical Tape 0 or greater"
+      "Please enter a whole number for medical Tape greater than 0"
     );
-  }
+  } else {
   return true;
+  };
 };
 
 // chalk valdiation
 const customChalkValidation = value => {
-  if (!checkRegex(value, chalkRegex)) {
-    throw new Error("Please enter a whole number for chalk 0 or greater");
-  }
+  if(value === "") {
+    return true;
+  } else if (!checkRegex(value, chalkRegex)) {
+    throw new Error("Please enter a whole number for chalk greater than 0");
+  } else {
   return true;
+  };
 };
 
 // home page root directory
@@ -150,10 +156,25 @@ myApp.post(
       // ***logic for form***
 
       //cost of medicalTape
-      let medicalTapeCost = medicalTape * 3;
 
+      let medicalTapeCost = ""
+      
+      if (medicalTape !== "") {        
+          medicalTapeCost = medicalTape * 3;
+      } else {
+        medicalTapeCost = 0;
+      }    
+      
       //cost of chalk
-      let chalkCost = chalk * 2;
+
+      let chalkCost = ""
+      
+      if (chalk !== "") {        
+          chalkCost = chalk * 2;
+      } else {
+        chalkCost = 0;
+      }  
+
       
       let gymnasticSuitCost = 0;
 
@@ -170,8 +191,7 @@ myApp.post(
           break;
         default:
           gymnasticSuitCost;
-      }
-      console.log(gymnasticSuitCost);
+      }      
 
       let gymnasticGripCost = 0
 
@@ -187,7 +207,7 @@ myApp.post(
           gymnasticGripCost = 5;
           break;
         default:
-          gymnasticGripCost = 0;
+          gymnasticGripCost;
       }
 
       // // array of provinces
@@ -251,8 +271,12 @@ myApp.post(
       }
 
       let subTotal =
-        medicalTapeCost + chalkCost + gymnasticSuitCost + gymnasticGripCost;
-
+      medicalTapeCost + chalkCost + gymnasticSuitCost + gymnasticGripCost;
+      // console.log(subTotal)
+      console.log(medicalTapeCost)
+      console.log(chalkCost)
+      console.log(gymnasticGripCost)
+      
       let totalTax = subTotal * taxRate;
 
       let totalAmount = subTotal + totalTax;
