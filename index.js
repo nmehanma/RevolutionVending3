@@ -91,26 +91,26 @@ const customCityValidation = value => {
 
 // medicalTape validation
 const customMedicalTapeValidation = value => {
-  if(value === "") {
+  if (value === "") {
     return true;
   } else if (!checkRegex(value, medicalTapeRegex)) {
     throw new Error(
       "Please enter a whole number for medical Tape greater than 0"
     );
   } else {
-  return true;
-  };
+    return true;
+  }
 };
 
 // chalk valdiation
 const customChalkValidation = value => {
-  if(value === "") {
+  if (value === "") {
     return true;
   } else if (!checkRegex(value, chalkRegex)) {
     throw new Error("Please enter a whole number for chalk greater than 0");
   } else {
-  return true;
-  };
+    return true;
+  }
 };
 
 // home page root directory
@@ -157,24 +157,24 @@ myApp.post(
 
       //cost of medicalTape
 
-      let medicalTapeCost = ""
-      
-      if (medicalTape !== "") {        
-          medicalTapeCost = medicalTape * 3;
+      let medicalTapeCost = "";
+
+      if (medicalTape !== "") {
+        medicalTapeCost = medicalTape * 3;
       } else {
         medicalTapeCost = 0;
-      }    
-      
+      }
+
       //cost of chalk
 
-      let chalkCost = ""
-      
-      if (chalk !== "") {        
-          chalkCost = chalk * 2;
+      let chalkCost = "";
+
+      if (chalk !== "") {
+        chalkCost = chalk * 2;
       } else {
         chalkCost = 0;
-      }  
-      
+      }
+
       let gymnasticSuitCost = 0;
 
       //cost of gymnasticSuit
@@ -190,9 +190,9 @@ myApp.post(
           break;
         default:
           gymnasticSuitCost;
-      }      
+      }
 
-      let gymnasticGripCost = 0
+      let gymnasticGripCost = 0;
 
       //cost of gymnasticGrip
       switch (gymnasticGrip) {
@@ -242,44 +242,39 @@ myApp.post(
           break;
         case "mb":
           taxRate = 0.12;
-          province = "Manitoba"
+          province = "Manitoba";
           break;
         case "on":
           taxRate = 0.13;
-          province = "Ontario"
+          province = "Ontario";
           break;
         case "qb":
           taxRate = 0.14975;
-          province = "Quebec"
+          province = "Quebec";
           break;
         case "ns":
           taxRate = 0.15;
-          province = "Nova Scotia"
+          province = "Nova Scotia";
           break;
         case "nb":
           taxRate = 0.15;
-          province = "New Brunswick"
+          province = "New Brunswick";
           break;
         case "pe":
           taxRate = 0.15;
-          province = "Prince Edward Island"
+          province = "Prince Edward Island";
           break;
         case "nf":
           taxRate = 0.15;
-          province = "Newfoundland"
+          province = "Newfoundland";
       }
 
       let subTotal =
-      medicalTapeCost + chalkCost + gymnasticSuitCost + gymnasticGripCost;
-      // console.log(subTotal)
-      console.log(medicalTapeCost)
-      console.log(chalkCost)
-      console.log(gymnasticGripCost)
-      
+        medicalTapeCost + chalkCost + gymnasticSuitCost + gymnasticGripCost;
+        
       let totalTax = subTotal * taxRate;
 
       let totalAmount = subTotal + totalTax;
-
 
       let pageData = {
         name: name,
