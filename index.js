@@ -92,7 +92,9 @@ const customCityValidation = value => {
 // medicalTape validation
 const customMedicalTapeValidation = value => {
   if (!checkRegex(value, medicalTapeRegex)) {
-    throw new Error("Please enter a whole number for medical Tape 0 or greater");
+    throw new Error(
+      "Please enter a whole number for medical Tape 0 or greater"
+    );
   }
   return true;
 };
@@ -124,6 +126,7 @@ myApp.post(
     check("chalk", "").custom(customChalkValidation)
   ],
   function(req, res) {
+    console.log(req.body);
     const errors = validationResult(req);
     // console.log(errors);
 
@@ -131,7 +134,7 @@ myApp.post(
       res.render("form", {
         errors: errors.array()
       });
-      console.log(errors)
+      console.log(errors);
     } else {
       let name = req.body.name;
       let address = req.body.address;
@@ -144,8 +147,6 @@ myApp.post(
       let gymnasticSuit = req.body.gymnasticSuit;
       let gymnasticGrip = req.body.gymnasticGrip;
 
-   
-
       // ***logic for form***
 
       //cost of medicalTape
@@ -153,8 +154,8 @@ myApp.post(
 
       //cost of chalk
       let chalkCost = chalk * 2;
-
-      console.log(gymnasticSuit)
+      
+      let gymnasticSuitCost = 0;
 
       //cost of gymnasticSuit
       switch (gymnasticSuit) {
@@ -168,8 +169,11 @@ myApp.post(
           gymnasticSuitCost = 5;
           break;
         default:
-          gymnasticSuitCost = 0;
+          gymnasticSuitCost;
       }
+      console.log(gymnasticSuitCost);
+
+      let gymnasticGripCost = 0
 
       //cost of gymnasticGrip
       switch (gymnasticGrip) {
@@ -207,33 +211,43 @@ myApp.post(
       switch (province) {
         case "bc":
           taxRate = 0.12;
+          province = "British Columbia";
           break;
         case "ab":
           taxRate = 0.05;
+          province = "Alberta";
           break;
         case "sk":
           taxRate = 0.11;
+          province = "Saskatchewan";
           break;
         case "mb":
           taxRate = 0.12;
+          province = "Manitoba"
           break;
         case "on":
           taxRate = 0.13;
+          province = "Ontario"
           break;
         case "qb":
           taxRate = 0.14975;
+          province = "Quebec"
           break;
         case "ns":
           taxRate = 0.15;
+          province = "Nova Scotia"
           break;
         case "nb":
           taxRate = 0.15;
+          province = "New Brunswick"
           break;
         case "pe":
           taxRate = 0.15;
+          province = "Prince Edward Island"
           break;
         case "nf":
           taxRate = 0.15;
+          province = "Newfoundland"
       }
 
       let subTotal =
@@ -243,10 +257,6 @@ myApp.post(
 
       let totalAmount = subTotal + totalTax;
 
-    
-      // if (totalAmount < 10){
-      //   return "Minimum purchase should be $10"
-      // }
 
       let pageData = {
         name: name,
@@ -255,10 +265,10 @@ myApp.post(
         province: province,
         phoneNumber: phoneNumber,
         email: email,
-        medicalTape: medicalTape,
-        chalk: chalk,
-        gymnasticSuit: gymnasticSuit,
-        gymnasticGrip: gymnasticGrip,
+        medicalTapeCost: medicalTapeCost,
+        chalkCost: chalkCost,
+        gymnasticSuitCost: gymnasticSuitCost,
+        gymnasticGripCost: gymnasticGripCost,
         subTotal: subTotal,
         totalTax: totalTax,
         totalAmount: totalAmount

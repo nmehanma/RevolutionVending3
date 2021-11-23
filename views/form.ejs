@@ -94,7 +94,7 @@
        }      
     %> 
     <% 
-      if(typeof(name) != 'undefined')
+      if(typeof(name) != 'undefined' && totalAmount > 10)
       {
         %>
         <p id="form-results"><%= `${name}'s Receipt` %></p>
@@ -126,53 +126,50 @@
           <tr>
             <th> City: </th>
             <td><%= city %></td>
-          </tr>
-          <tr>
-            <th> Province: </th>
-            <td><%= province %></td>
-          </tr>
-          <tr>
-            <th> Phone Number: </th>
-            <td><%= phoneNumber %></td>
-          </tr>
-          <tr>
-            <th> Email: </th>
-            <td><%= email %></td>
-          </tr>
+          </tr>          
           <tr>
             <th> Medical Tape: </th>
-            <td><%= medicalTape %></td>
+            <td>$<%= medicalTapeCost %></td>
           </tr>
           <tr>
             <th> Chalk: </th>
-            <td><%= chalk %></td>
+            <td>$<%= chalkCost %></td>
           </tr>
           <tr>
             <th> Gymnastic Suit: </th>
-            <td><%= gymnasticSuit %></td>
+            <td>$<%= gymnasticSuitCost %></td>
           </tr>
           <tr>
             <th> Grips: </th>
-            <td><%= gymnasticGrip %></td>
+            <td>$<%= gymnasticGripCost %></td>
           </tr>
           <tr>
             <th> Sub Total: </th>
-            <td>$<%= email %></td>
+            <td>$<%= subTotal %></td>
+          </tr>
+          <tr>
+            <th> Total Tax: </th>
+            <td>$<%= totalTax %></td>
+          </tr>
+          <tr>
+            <th> Total Amount: </th>
+            <td>$<%= totalAmount %></td>
           </tr>
                                  
         </table>
     <%
-      }
+      } else {
+        %>
+        <p id="form-results">
+          <table>
+          <tr>
+            <th> Minimum puchase of $10 required to complete order </th>
+          </tr>
+          </table>
+        <%
+        }      
     %>  
   </div>
-
-
-    
-  
-
-
-
-    </div>
 
     <div class="clear"></div>
 
