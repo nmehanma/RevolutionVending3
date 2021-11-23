@@ -1,34 +1,55 @@
-<!-- <!DOCTYPE html> -->
-<!-- <html> -->
-<!-- <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Forms and Validations</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="js/index.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet"> 
-    <link rel="stylesheet" type="text/css" href="css/form.css">
-</head> -->
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Forms and Validations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script type="text/javascript" src="js/index.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps"
+    rel="stylesheet"
+  />
+  <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/stylesheets.css" />
+</head>
 <body>
-
   <h1>Revolution Vending</h1>
 
-  <div class="form-data">
-    <form name="my-form" method="post" onsubmit="return formSubmit();" action="">
-      <!--Customer info-->
+  <section class="flex-container">
+    <div class="form-data">
+      <form
+        name="my-form"
+        method="post"
+        onsubmit="return formSubmit();"
+        action=""
+      >
+        <!--Customer info-->
 
-      <label for="name">Name</label>
-      <input name="name" type="text" id="name" placeholder="First Last" ><br/>
+        <label for="name">Name</label>
+        <input
+          name="name"
+          type="text"
+          id="name"
+          placeholder="First Last"
+        /><br />
 
-      <label for="address">Address</label>
-      <input name="address" type="text" id="address" placeholder="eg. 123 Main Street"><br/>
+        <label for="address">Address</label>
+        <input
+          name="address"
+          type="text"
+          id="address"
+          placeholder="eg. 123 Main Street"
+        /><br />
 
-      <label for="city">City</label>
-      <input name="city" type="text" id="city" placeholder='eg. "Toronto" or "New Dundee"'><br/>
+        <label for="city">City</label>
+        <input
+          name="city"
+          type="text"
+          id="city"
+          placeholder='eg. "Toronto" or "New Dundee"'
+        /><br />
 
-      <label>Province</label>
-      <select name="province" id="province">
+        <label>Province</label>
+        <select name="province" id="province">
           <option value="">----- Select -----</option>
           <option value="bc">British Columbia</option>
           <option value="ab">Alberta</option>
@@ -39,140 +60,143 @@
           <option value="ns">Nova Scotia</option>
           <option value="pe">Prince Edward Island</option>
           <option value="nb">New Brunswick</option>
-          <option value="nf">Newfoundland</option>
-      </select><br/>
+          <option value="nf">Newfoundland</option> </select
+        ><br />
 
-       <label for="phone-number">Phone Number</label>
-      <input name="phoneNumber" type="text" id="phone-number" placeholder="xxxxxxxxxx"><br/>
+        <label for="phone-number">Phone Number</label>
+        <input
+          name="phoneNumber"
+          type="text"
+          id="phone-number"
+          placeholder="xxxxxxxxxx"
+        /><br />
 
-      <label for="email">Email</label>
-      <input name="email" type="text" id="email" placeholder="email@domain.com"><br/>
+        <label for="email">Email</label>
+        <input
+          name="email"
+          type="text"
+          id="email"
+          placeholder="email@domain.com"
+        /><br />
 
-  <!-- Products for sale-->
+        <!-- Products for sale-->
 
-      <label for="medical-tape">Medical Tape</label>
-      <input name="medicalTape" type="text" id="medical-tape" placeholder="Enter quantity number"><br/>
+        <label for="medical-tape">Medical Tape</label>
+        <input
+          name="medicalTape"
+          type="text"
+          id="medical-tape"
+          placeholder="Enter quantity number"
+        /><br />
 
-      <label for="chalk">Chalk</label>
-      <input name="chalk" type="text" id="chalk" placeholder="Enter quantity number"><br/>
+        <label for="chalk">Chalk</label>
+        <input
+          name="chalk"
+          type="text"
+          id="chalk"
+          placeholder="Enter quantity number"
+        /><br />
 
-      <label>Gymnastic suit</label>
-      <select name="gymnasticSuit" id="gymnastic-suit">
+        <label>Gymnastic suit</label>
+        <select name="gymnasticSuit" id="gymnastic-suit">
           <option value="">----- Select -----</option>
           <option value="s">Small $2</option>
           <option value="m">Medium $3</option>
-          <option value="l">Large $5</option>
-      </select><br/>
+          <option value="l">Large $5</option> </select
+        ><br />
 
-      <label>Grips</label>
-      <select name="gymnasticGrip" id="gymnastic-grip">
+        <label>Grips</label>
+        <select name="gymnasticGrip" id="gymnastic-grip">
           <option value="">----- Select -----</option>
           <option value="s">Small $2</option>
           <option value="m">Medium $3</option>
-          <option value="l">Large $5</option>
-      </select><br/>
+          <option value="l">Large $5</option> </select
+        ><br />
 
+        <input type="submit" value="Submit" />
 
-      <input type="submit" value="Submit">
+        <!--where the error data will show up-->
 
-      <!--where the error data will show up-->
+        <!-- <p id="errors"></p> -->
+      </form>
+    </div>
 
-      <p id="errors"></p>      
-    
-    </form>
-  </div>
-  <div class="formData">
-    <% 
-       if (typeof(errors) != 'undefined')
-       {
-         for(let error of errors)
-         {
-           %>
-           <p class='errors'><%= error.msg %></p>
-           <%
-         }
-       }      
-    %> 
-    <% 
-      if(typeof(name) != 'undefined' && totalAmount > 10)
-      {
-        %>
+    <div class="formData">
+      <% if (typeof(errors) != 'undefined') { for(let error of errors) { %>
+        <p class="errors"><%= error.msg %></p>
+      <% }  
+        } else if (typeof(name) != 'undefined' && totalAmount > 10) { %>
         <p id="form-results"><%= `${name}'s Receipt` %></p>
-        <table>
-          <tr>
-            <th> Name: </th>
-            <td><%= name %></td>
-          </tr>
-          <tr>
-            <th> Address: </th>
-            <td><%= address %></td>
-          </tr>
-          <tr>
-            <th> City: </th>
-            <td><%= city %></td>
-          </tr>
-          <tr>
-            <th> Province: </th>
-            <td><%= province %></td>
-          </tr>
-          <tr>
-            <th> Phone Number: </th>
-            <td><%= phoneNumber %></td>
-          </tr>
-          <tr>
-            <th> Email: </th>
-            <td><%= email %></td>
-          </tr>    
-          <tr>
-            <th> City: </th>
-            <td><%= city %></td>
-          </tr>          
-          <tr>
-            <th> Medical Tape: </th>
-            <td>$<%= medicalTapeCost %></td>
-          </tr>
-          <tr>
-            <th> Chalk: </th>
-            <td>$<%= chalkCost %></td>
-          </tr>
-          <tr>
-            <th> Gymnastic Suit: </th>
-            <td>$<%= gymnasticSuitCost %></td>
-          </tr>
-          <tr>
-            <th> Grips: </th>
-            <td>$<%= gymnasticGripCost %></td>
-          </tr>
-          <tr>
-            <th> Sub Total: </th>
-            <td>$<%= subTotal %></td>
-          </tr>
-          <tr>
-            <th> Total Tax: </th>
-            <td>$<%= totalTax %></td>
-          </tr>
-          <tr>
-            <th> Total Amount: </th>
-            <td>$<%= totalAmount %></td>
-          </tr>
-                                 
-        </table>
-    <%
-      } else {
-        %>
-        <p id="form-results">
+
+      <table class="user-receipt">
+        <tr>
+          <th>Name:</th>
+          <td><%= name %></td>
+        </tr>
+        <tr>
+          <th>Address:</th>
+          <td><%= address %></td>
+        </tr>
+        <tr>
+          <th>City:</th>
+          <td><%= city %></td>
+        </tr>
+        <tr>
+          <th>Province:</th>
+          <td><%= province %></td>
+        </tr>
+        <tr>
+          <th>Phone Number:</th>
+          <td><%= phoneNumber %></td>
+        </tr>
+        <tr>
+          <th>Email:</th>
+          <td><%= email %></td>
+        </tr>
+        <tr>
+          <th>City:</th>
+          <td><%= city %></td>
+        </tr>
+        <tr>
+          <th>Medical Tape:</th>
+          <td>$<%= medicalTapeCost %></td>
+        </tr>
+        <tr>
+          <th>Chalk:</th>
+          <td>$<%= chalkCost %></td>
+        </tr>
+        <tr>
+          <th>Gymnastic Suit:</th>
+          <td>$<%= gymnasticSuitCost %></td>
+        </tr>
+        <tr>
+          <th>Grips:</th>
+          <td>$<%= gymnasticGripCost %></td>
+        </tr>
+        <tr>
+          <th>Sub Total:</th>
+          <td>$<%= subTotal %></td>
+        </tr>
+        <tr>
+          <th>Total Tax:</th>
+          <td>$<%= totalTax %></td>
+        </tr>
+        <tr>
+          <th>Total Amount:</th>
+          <td>$<%= totalAmount %></td>
+        </tr>
+      </table>
+
+      <% } else { %>
+        <p id="form-results"></p>
           <table>
-          <tr>
-            <th> Minimum puchase of $10 required to complete order </th>
-          </tr>
+            <tr>
+              <th>Minimum puchase of $10 required to complete order</th>
+            </tr>
           </table>
-        <%
-        }      
-    %>  
-  </div>
+      <% } %>
+    </div>
+  </section>
 
-    <div class="clear"></div>
-
-
-
+  <div class="clear"></div>
 </body>
