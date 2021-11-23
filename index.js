@@ -174,7 +174,6 @@ myApp.post(
       } else {
         chalkCost = 0;
       }  
-
       
       let gymnasticSuitCost = 0;
 
