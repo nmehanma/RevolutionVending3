@@ -36,6 +36,15 @@ h1 {
 
 .form-data {
   align-content: right;
+  flex-basis: 380px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.formData {
+  flex-grow: 0;
+  flex-basis: 350px;
+  flex-shrink: 0;
 }
 
 .errors {
@@ -47,5 +56,25 @@ label {
   text-align: left;
   display: inline-block;
   margin: 4px;
+}
+
+form > div {
+  display: flex;
+  margin: auto;
+}
+
+label,
+input,
+select {
+  display: inline-block;
   
+}
+
+input,
+select {
+  margin-left: auto;
+}
+
+#submit {
+  text-align: center;
 }

@@ -23,97 +23,111 @@
         action=""
       >
         <!--Customer info-->
+        <div class="name-label">
+          <label for="name">Name</label>
+          <input name="name" type="text" id="name" placeholder="First Last" />
+        </div>
+        <div class="address-label">
+          <label for="address">Address</label>
+          <input
+            name="address"
+            type="text"
+            id="address"
+            placeholder="eg. 123 Main Street"
+          />
+        </div>
+        <div class="city-label">
+          <label for="city">City</label>
+          <input
+            name="city"
+            type="text"
+            id="city"
+            placeholder='eg. "Toronto" or "New Dundee"'
+          />
+        </div>
 
-        <label for="name">Name</label>
-        <input
-          name="name"
-          type="text"
-          id="name"
-          placeholder="First Last"
-        /><br />
+        <div class="province-label">
+          <label>Province</label>
+          <select name="province" id="province">
+            <option value="">----- Select -----</option>
+            <option value="bc">British Columbia</option>
+            <option value="ab">Alberta</option>
+            <option value="sk">Saskatchewan</option>
+            <option value="mb">Manitoba</option>
+            <option value="on">Ontario</option>
+            <option value="qb">Quebec</option>
+            <option value="ns">Nova Scotia</option>
+            <option value="pe">Prince Edward Island</option>
+            <option value="nb">New Brunswick</option>
+            <option value="nf">Newfoundland</option>
+          </select>
+        </div>
+        <div class="phone-label">
+          <label for="phone-number">Phone Number</label>
+          <input
+            name="phoneNumber"
+            type="text"
+            id="phone-number"
+            placeholder="xxxxxxxxxx"
+          />
+        </div>
 
-        <label for="address">Address</label>
-        <input
-          name="address"
-          type="text"
-          id="address"
-          placeholder="eg. 123 Main Street"
-        /><br />
-
-        <label for="city">City</label>
-        <input
-          name="city"
-          type="text"
-          id="city"
-          placeholder='eg. "Toronto" or "New Dundee"'
-        /><br />
-
-        <label>Province</label>
-        <select name="province" id="province">
-          <option value="">----- Select -----</option>
-          <option value="bc">British Columbia</option>
-          <option value="ab">Alberta</option>
-          <option value="sk">Saskatchewan</option>
-          <option value="mb">Manitoba</option>
-          <option value="on">Ontario</option>
-          <option value="qb">Quebec</option>
-          <option value="ns">Nova Scotia</option>
-          <option value="pe">Prince Edward Island</option>
-          <option value="nb">New Brunswick</option>
-          <option value="nf">Newfoundland</option> </select
-        ><br />
-
-        <label for="phone-number">Phone Number</label>
-        <input
-          name="phoneNumber"
-          type="text"
-          id="phone-number"
-          placeholder="xxxxxxxxxx"
-        /><br />
-
-        <label for="email">Email</label>
-        <input
-          name="email"
-          type="text"
-          id="email"
-          placeholder="email@domain.com"
-        /><br />
+        <div class="email-label">
+          <label for="email">Email</label>
+          <input
+            name="email"
+            type="text"
+            id="email"
+            placeholder="email@domain.com"
+          />
+        </div>
 
         <!-- Products for sale-->
 
-        <label for="medical-tape">Medical Tape</label>
-        <input
-          name="medicalTape"
-          type="text"
-          id="medical-tape"
-          placeholder="Enter quantity number"
-        /><br />
+        <div class="medical-tape-label">
+          <label for="medical-tape">Medical Tape</label>
+          <input
+            name="medicalTape"
+            type="text"
+            id="medical-tape"
+            placeholder="Enter quantity number"
+          />
+        </div>
 
-        <label for="chalk">Chalk</label>
-        <input
-          name="chalk"
-          type="text"
-          id="chalk"
-          placeholder="Enter quantity number"
-        /><br />
+        <div class="chalk-label">
+          <label for="chalk">Chalk</label>
+          <input
+            name="chalk"
+            type="text"
+            id="chalk"
+            placeholder="Enter quantity number"
+          />
+        </div>
 
-        <label>Gymnastic suit</label>
-        <select name="gymnasticSuit" id="gymnastic-suit">
-          <option value="">----- Select -----</option>
-          <option value="s">Small $2</option>
-          <option value="m">Medium $3</option>
-          <option value="l">Large $5</option> </select
-        ><br />
+        <div class="gymnastic-suit-label">
+          <label>Gymnastic suit</label>
+          <select name="gymnasticSuit" id="gymnastic-suit">
+            <option value="">----- Select -----</option>
+            <option value="s">Small $2</option>
+            <option value="m">Medium $3</option>
+            <option value="l">Large $5</option>
+          </select>
+        </div>
 
-        <label>Grips</label>
-        <select name="gymnasticGrip" id="gymnastic-grip">
-          <option value="">----- Select -----</option>
-          <option value="s">Small $2</option>
-          <option value="m">Medium $3</option>
-          <option value="l">Large $5</option> </select
-        ><br />
+        <div class="gymnastic-grip-label">
+          <label>Grips</label>
+          <select name="gymnasticGrip" id="gymnastic-grip">
+            <option value="">----- Select -----</option>
+            <option value="s">Small $2</option>
+            <option value="m">Medium $3</option>
+            <option value="l">Large $5</option>
+          </select>
+        </div>
 
-        <input type="submit" value="Submit" />
+        <div class="submit">
+          <input type="submit" value="Submit" />
+        </div>
+
 
         <!--where the error data will show up-->
 
