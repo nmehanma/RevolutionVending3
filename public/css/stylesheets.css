@@ -41,7 +41,7 @@ h1 {
   flex-shrink: 0;
 }
 
-.formData {
+.formResult {
   flex-grow: 0;
   flex-basis: 350px;
   flex-shrink: 0;
@@ -67,7 +67,13 @@ label,
 input,
 select {
   display: inline-block;
+  text-align: center;
   
+}
+
+#city {
+  font-size: 10px;
+  width: 150px;
 }
 
 input,
@@ -75,6 +81,6 @@ select {
   margin-left: auto;
 }
 
-#submit {
-  text-align: center;
-}
+/* #submit {
+ margin: center;
+} */

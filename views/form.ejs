@@ -124,18 +124,13 @@
           </select>
         </div>
 
-        <div class="submit">
-          <input type="submit" value="Submit" />
-        </div>
+       
+          <input id="submit" type="submit" value="Submit" />
 
-
-        <!--where the error data will show up-->
-
-        <!-- <p id="errors"></p> -->
       </form>
     </div>
 
-    <div class="formData">
+    <div class="formResult">
       <% if (typeof(errors) != 'undefined') { for(let error of errors) { %>
       <p class="errors"><%= error.msg %></p>
       <% } } else if (typeof(name) != 'undefined' && totalAmount > 10) { %>
@@ -174,22 +169,22 @@
         <% if(medicalTapeCost !== 0) { %>
         <tr>
           <th>Medical Tape:</th>
-          <td><%= medicalTapeCost %></td>
+          <td>$<%= medicalTapeCost %></td>
         </tr>
         <% } %> <% if(chalkCost !== 0) { %>
         <tr>
           <th>Chalk:</th>
-          <td><%= chalkCost %></td>
+          <td>$<%= chalkCost %></td>
         </tr>
         <% } %> <% if(gymnasticSuitCost !== 0) { %>
         <tr>
           <th>Gymnastic Suit:</th>
-          <td><%= gymnasticSuitCost %></td>
+          <td>$<%= gymnasticSuitCost %></td>
         </tr>
         <% } %> <% if( gymnasticGripCost !== 0) { %>
         <tr>
           <th>Gymnastic Grip:</th>
-          <td><%= gymnasticGripCost %></td>
+          <td>$<%= gymnasticGripCost %></td>
         </tr>
         <% } %>
         <tr>
