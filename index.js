@@ -275,11 +275,11 @@ myApp.post(
           break;
         case "nt":
           taxRate = 0.05;
-          province = "Yukon";
+          province = "North West Territories";
           break;
         case "nu":
           taxRate = 0.05;
-          province = "Yukon";
+          province = "Nunavut";
           break;
       }
 
@@ -297,10 +297,10 @@ myApp.post(
         province: province,
         phoneNumber: phoneNumber,
         email: email,
-        medicalTapeCost: medicalTapeCost,
-        chalkCost: chalkCost,
-        gymnasticSuitCost: gymnasticSuitCost,
-        gymnasticGripCost: gymnasticGripCost,
+        medicalTapeCost: medicalTapeCost.toFixed(2),
+        chalkCost: chalkCost.toFixed(2),
+        gymnasticSuitCost: gymnasticSuitCost.toFixed(2),
+        gymnasticGripCost: gymnasticGripCost.toFixed(2),
         subTotal: subTotal.toFixed(2),
         totalTax: totalTax.toFixed(2),
         totalAmount: totalAmount.toFixed(2)
