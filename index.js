@@ -16,7 +16,7 @@ myApp.set("view engine", "ejs");
 //specfic validation functions
 
 //name validation
-const nameRegex = /^[a-zA-Z]+\s[a-zA-Z]+/;
+const nameRegex = /^[A-Z][a-z]+\s[A-Z][a-z]+/;
 
 //phonenumber validation
 const phoneNumberRegex = /^\d{10}$/;
@@ -132,7 +132,7 @@ myApp.post(
     check("chalk", "").custom(customChalkValidation)
   ],
   function(req, res) {
-    console.log(req.body);
+    // console.log(req.body);
     const errors = validationResult(req);
     // console.log(errors);
 
@@ -140,7 +140,7 @@ myApp.post(
       res.render("form", {
         errors: errors.array()
       });
-      console.log(errors);
+      // console.log(errors);
     } else {
       let name = req.body.name;
       let address = req.body.address;
@@ -304,7 +304,7 @@ myApp.post(
         totalTax: totalTax.toFixed(2),
         totalAmount: totalAmount.toFixed(2)
       };
-      console.log(pageData);
+      // console.log(pageData);
 
       res.render("form", pageData);
     }

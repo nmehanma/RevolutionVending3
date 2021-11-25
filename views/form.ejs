@@ -136,7 +136,7 @@
     <div class="formResult">
       <% if (typeof(errors) != 'undefined') { for(let error of errors) { %>
       <p class="errors"><%= error.msg %></p>
-      <% } } else if (typeof(name) != 'undefined' && totalAmount > 10) { %>
+      <% } } else if (typeof(name) != 'undefined' && subTotal >= 10) { %>
       <p id="form-results"><%= `${name}'s Receipt` %></p>
 
       <table class="user-receipt">
@@ -208,13 +208,13 @@
       <p id="form-results"></p>
       <table>
         <tr>
-          <th>Minimum puchase of $10 required to complete order</th>
+          <th>Minimum Subtotal purchase of $10 required to complete order</th>
         </tr>
       </table>
 
       <% } %>
     </div>
   </section>
-
-  <div class="clear"></div>
+<!-- 
+  <div class="clear"></div> -->
 </body>
