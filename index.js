@@ -48,7 +48,7 @@ const checkRegex = (userInput, regex) => {
 
 const customNameValidation = value => {
   if (!checkRegex(value, nameRegex)) {
-    throw new Error("Please enter correct format: 'John Doe'");
+    throw new Error("Please enter correct name format: 'John Doe'");
   }
   return true;
 };
@@ -57,7 +57,7 @@ const customNameValidation = value => {
 
 const customPhoneValidation = value => {
   if (!checkRegex(value, phoneNumberRegex)) {
-    throw new Error("Please enter correct format: 1231231234");
+    throw new Error("Please enter correct Phone number format: 1231231234");
   }
   return true;
 };
@@ -66,7 +66,7 @@ const customPhoneValidation = value => {
 
 const customEmailValidation = value => {
   if (!checkRegex(value, emailRegex)) {
-    throw new Error("Please enter correct format: email@domain.com");
+    throw new Error("Please enter correct Email format: email@domain.com");
   }
   return true;
 };
@@ -74,7 +74,7 @@ const customEmailValidation = value => {
 // address validation
 const customAddressValidation = value => {
   if (!checkRegex(value, addressRegex)) {
-    throw new Error("Please enter correct format: 123 Main Street");
+    throw new Error("Please enter correct Address format: 123 Main Street");
   }
   return true;
 };
@@ -82,7 +82,7 @@ const customAddressValidation = value => {
 // city validation
 const customCityValidation = value => {
   if (!checkRegex(value, cityRegex)) {
-    throw new Error("Please enter correct format: Toronto or New Dundee");
+    throw new Error("Please enter correct City format: Toronto or New Dundee");
   }
   return true;
 };
@@ -125,7 +125,7 @@ myApp.post(
     check("name", "").custom(customNameValidation),
     check("address", "").custom(customAddressValidation),
     check("city", "").custom(customCityValidation),
-    check("province", "Province is required!").notEmpty(),
+    check("province", "Select a Province").notEmpty(),
     check("phoneNumber", "").custom(customPhoneValidation),
     check("email", "").custom(customEmailValidation),
     check("medicalTape", "").custom(customMedicalTapeValidation),
@@ -267,11 +267,24 @@ myApp.post(
         case "nf":
           taxRate = 0.15;
           province = "Newfoundland";
+          break;
+        case "yt":
+          taxRate = 0.05;
+          province = "Yukon";
+          break;
+        case "nt":
+          taxRate = 0.05;
+          province = "Yukon";
+          break;
+        case "nu":
+          taxRate = 0.05;
+          province = "Yukon";
+          break;
       }
 
       let subTotal =
         medicalTapeCost + chalkCost + gymnasticSuitCost + gymnasticGripCost;
-        
+
       let totalTax = subTotal * taxRate;
 
       let totalAmount = subTotal + totalTax;
@@ -287,9 +300,9 @@ myApp.post(
         chalkCost: chalkCost,
         gymnasticSuitCost: gymnasticSuitCost,
         gymnasticGripCost: gymnasticGripCost,
-        subTotal: subTotal,
-        totalTax: totalTax,
-        totalAmount: totalAmount
+        subTotal: subTotal.toFixed(2),
+        totalTax: totalTax.toFixed(2),
+        totalAmount: totalAmount.toFixed(2)
       };
       console.log(pageData);
 
