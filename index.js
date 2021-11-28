@@ -36,7 +36,14 @@ const Order = mongoose.model("Order", {
   medicalTape: String,
   chalk: String,
   gymnasticSuit: String,
-  ymnasticGrip: String
+  gymnasticGrip: String,
+  medicalTapeCost: String,
+  chalkCost: String,
+  gymnasticSuitCost: String,
+  gymnasticGripCost: String,
+  subTotal: String,
+  totalTax: String,
+  totalAmount: String
 });
 
 //specfic validation functions
@@ -333,6 +340,20 @@ myApp.post(
       };
       // console.log(pageData);
 
+      // 1- We set up the type of information that will be displayed in our model
+      // 2- Create an object for the model - Order
+
+      if (totalAmount >= 10) {
+        let myOrder = new Order(pageData);
+        // 3 -Save the order, save the information from the form
+        myOrder.save().then(function() {
+          console.log("New Order Created!");
+        });
+      }
+
+
+
+      // Display Output : Receipt
       res.render("form", pageData);
     }
   }
