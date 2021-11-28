@@ -3,7 +3,9 @@
     "body-parser": "*",
     "ejs": "*",
     "express": "^4.17.1",
-    "express-validator": "*"
+    "express-validator": "*",
+    "mongodb": "^4.1.4",
+    "mongoose": "*"
   },
   "name": "revolutionvending",
   "version": "1.0.0",

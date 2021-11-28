@@ -3,6 +3,7 @@
 const express = require("express");
 const path = require("path");
 const { check, validationResult } = require("express-validator");
+// const { RSA_PSS_SALTLEN_DIGEST } = require('constants')
 
 let myApp = express();
 myApp.use(express.urlencoded({ extended: true }));
@@ -13,6 +14,30 @@ myApp.set("views", path.join(__dirname, "views"));
 myApp.use(express.static(__dirname + "/public"));
 
 myApp.set("view engine", "ejs");
+
+// set up database connection
+
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost:27017/revolutionvending3", {
+  // path of database and libraries want to use for our database
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}); // Path of Database
+
+//Setup the model for the order.  How the data will be processed.
+
+const Order = mongoose.model("Order", {
+  name: String,
+  address: String,
+  city: String,
+  province: String,
+  phoneNumber: String,
+  email: String,
+  medicalTape: String,
+  chalk: String,
+  gymnasticSuit: String,
+  ymnasticGrip: String
+});
 
 //specfic validation functions
 
@@ -143,6 +168,7 @@ myApp.post(
       });
       // console.log(errors);
     } else {
+      //No Errors
       let name = req.body.name;
       let address = req.body.address;
       let city = req.body.city;
