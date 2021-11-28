@@ -1,18 +1,8 @@
 <!--Author- Najeam Mehanmal 7457195-->
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Revolution Vending 3</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script type="text/javascript" src="js/index.js"></script>
-  <link
-    href="https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps"
-    rel="stylesheet"
-  />
-  <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="css/stylesheets.css" />
-</head>
-<body></body>
+<%- include('layouts/header'); -%>
+
+<body>
+  <%- include('layouts/nav'); -%>
   <h1>Revolution Vending</h1>
 
   <section class="flex-container">
@@ -128,9 +118,7 @@
           </select>
         </div>
 
-       
-          <input id="submit" type="submit" value="Submit" />
-
+        <input id="submit" type="submit" value="Submit" />
       </form>
     </div>
 
@@ -216,6 +204,6 @@
       <% } %>
     </div>
   </section>
-<!-- 
+  <!-- 
   <div class="clear"></div> -->
 </body>

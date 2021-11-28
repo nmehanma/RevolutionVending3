@@ -1,0 +1,42 @@
+<%-include('layouts/header'); -%>
+<body>
+  <%- include('layouts/nav'); -%>
+  <section>
+    <table class="fetch-orders">
+      <thead>
+        <th>Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Province</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Medical Tape Cost</th>
+        <th>Chalk Cost</th>
+        <th>Gymnastic Suit Cost</th>
+        <th>Gymnastic Grip Cost</th>
+        <th>SubTotal</th>
+        <th>Total Tax</th>
+        <th>Total Amount</th>
+      </thead>
+      <tbody>
+        <% for (let order of orders) { %>
+        <tr>
+          <td><%= order.name %></td>
+          <td><%= order.address %></td>
+          <td><%= order.city %></td>
+          <td><%= order.province %></td>
+          <td><%= order.phoneNumber %></td>
+          <td><%= order.email %></td>
+          <td><%= order.medicalTapeCost %></td>
+          <td>$<%= order.chalkCost %></td>
+          <td>$<%= order.gymnasticSuitCost %></td>
+          <td><%= order.gymnasticGripCost %></td>
+          <td>$<%= order.subTotal %></td>
+          <td>$<%= order.totalTax %></td>
+          <td>$<%= order.totalAmount %></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </section>
+</body>

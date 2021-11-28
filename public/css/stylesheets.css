@@ -86,3 +86,19 @@ select {
 /* #submit {
  margin: center;
 } */
+
+table > thead {
+  border:2px solid black;
+  border-collapse: collapse;
+  margin: 20px auto;
+  color : black;
+}
+
+table > thead  > td, th {
+  border:2px solid black;
+  padding: 5px 4px;
+}
+
+table > thead  > th {
+  font-weight: bold;
+}
