@@ -4,8 +4,8 @@ body {
   /* background-color: aqua; */
   font-family: "Courier New", Courier, monospace;
   /* font-size: 20px; */
-  width: 900px;
   margin: auto;
+  background: antiquewhite;
 }
 
 h1 {
@@ -33,7 +33,6 @@ h1 {
   text-align: center;
   font-size: 17px;
   /* font-weight: bold; */
-
 }
 
 .form-data {
@@ -75,7 +74,6 @@ select {
 #city {
   font-size: 10px;
   width: 150px;
-  
 }
 
 input,
@@ -87,18 +85,62 @@ select {
  margin: center;
 } */
 
-table > thead {
-  border:2px solid black;
+table {
+  border: 2px solid black;
   border-collapse: collapse;
   margin: 20px auto;
-  color : black;
+  color: black;
+  background: white
 }
 
-table > thead  > td, th {
-  border:2px solid black;
+tbody > tr > td,
+th {
+  border: 2px solid black;
   padding: 5px 4px;
+  font-size: 13px;
+  padding-top: 20px;
 }
 
-table > thead  > th {
+table > thead > tr > th {
   font-weight: bold;
+  font-size: 15px;
+}
+
+.top_menu {
+  background-color: rgba(145, 68, 68, 0.986);
+  border: 3px solid black;
+  border-radius: 35px; 
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.top_menu ul {
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+}
+
+.top_menu ul li {
+  display: inline-block;
+  width: 130px;
+}
+
+.top_menu ul li:hover {
+  background-color: #0781b2;
+}
+.top_menu ul li a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 0;
+  display: block;
+}
+
+#ordersform {
+  margin: auto;
+  width: 900px;
+}
+.fetch-orders{
+margin: auto;
 }

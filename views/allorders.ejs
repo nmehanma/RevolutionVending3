@@ -1,7 +1,7 @@
 <%-include('layouts/header'); -%>
-<body>
+<body id="allorders">
   <%- include('layouts/nav'); -%>
-  <section>
+  <h1>Revolution Vending Completed Orders</h1>
     <table class="fetch-orders">
       <thead>
         <th>Name</th>
@@ -27,10 +27,10 @@
           <td><%= order.province %></td>
           <td><%= order.phoneNumber %></td>
           <td><%= order.email %></td>
-          <td><%= order.medicalTapeCost %></td>
+          <td>$<%= order.medicalTapeCost %></td>
           <td>$<%= order.chalkCost %></td>
           <td>$<%= order.gymnasticSuitCost %></td>
-          <td><%= order.gymnasticGripCost %></td>
+          <td>$<%= order.gymnasticGripCost %></td>
           <td>$<%= order.subTotal %></td>
           <td>$<%= order.totalTax %></td>
           <td>$<%= order.totalAmount %></td>
@@ -38,5 +38,4 @@
         <% } %>
       </tbody>
     </table>
-  </section>
 </body>
