@@ -93,7 +93,7 @@ table {
   background: white
 }
 
-tbody > tr > td,
+table > tbody > tr > td,
 th {
   border: 2px solid black;
   padding: 5px 4px;
@@ -101,7 +101,7 @@ th {
   padding-top: 20px;
 }
 
-table > thead > tr > th {
+ table > thead > tr > th {
   font-weight: bold;
   font-size: 15px;
 }
@@ -141,6 +141,21 @@ table > thead > tr > th {
   margin: auto;
   width: 900px;
 }
-.fetch-orders{
-margin: auto;
+
+.myform {
+  margin: auto;
 }
+
+.fetch-orders{
+margin: 20px;
+}
+
+footer {
+  padding: 15px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  
+}
+
+
