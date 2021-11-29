@@ -90,7 +90,7 @@ table {
   border-collapse: collapse;
   margin: 20px auto;
   color: black;
-  background: white
+  background: white;
 }
 
 table > tbody > tr > td,
@@ -101,7 +101,7 @@ th {
   padding-top: 20px;
 }
 
- table > thead > tr > th {
+table > thead > tr > th {
   font-weight: bold;
   font-size: 15px;
 }
@@ -109,7 +109,7 @@ th {
 .top_menu {
   background-color: rgba(145, 68, 68, 0.986);
   border: 3px solid black;
-  border-radius: 35px; 
+  border-radius: 35px;
   padding: 20px;
   margin-top: 20px;
   text-align: center;
@@ -146,8 +146,8 @@ th {
   margin: auto;
 }
 
-.fetch-orders{
-margin: 20px;
+.fetch-orders {
+  margin: 20px;
 }
 
 footer {
@@ -155,7 +155,4 @@ footer {
   text-align: center;
   font-size: 15px;
   font-weight: bold;
-  
 }
-
-
