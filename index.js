@@ -345,7 +345,7 @@ myApp.post(
 //All Orders Page
 myApp.get("/allorders", function(req, res) {
   Order.find({}).exec(function(err, orders) {
-    console.log(err);
+    // console.log(err);
     res.render("allorders", {orders: orders});
   })
 });
