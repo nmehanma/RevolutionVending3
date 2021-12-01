@@ -4,7 +4,7 @@ body {
   /* background-color: aqua; */
   font-family: "Courier New", Courier, monospace;
   /* font-size: 20px; */
-  margin: auto;
+  margin: 20px;
   background: antiquewhite;
 }
 
@@ -146,9 +146,9 @@ table > thead > tr > th {
   margin: auto;
 }
 
-.fetch-orders {
+/* .fetch-orders {
   margin: auto;
-}
+} */
 
 footer {
   padding: 15px;
