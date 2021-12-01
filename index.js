@@ -243,22 +243,7 @@ myApp.post(
           gymnasticGripCost;
       }
 
-      // // array of provinces
-      // let canadianProvinces = [
-      //   "bc",
-      //   "ab",
-      //   "sk",
-      //   "mb",
-      //   "on",
-      //   "qb",
-      //   "ns",
-      //   "nb",
-      //   "pe",
-      //   "nf"
-      // ];
-
       //determine taxRate per province selected
-
       let taxRate = 0;
 
       switch (province) {
