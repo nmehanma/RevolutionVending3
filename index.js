@@ -353,5 +353,5 @@ myApp.get("/allorders", function(req, res) {
 //open up the ports, http protocol
 
 // Confirmation output domain name displayed in terminal screen
-myApp.listen(8080);
-console.log("Application started ... listening on port 8080!"); // Open URL in Browser: http:localhost:8080
+myApp.listen(5500);
+console.log("Application started ... listening on port 5500!"); // Open URL in Browser: http:localhost:8080
